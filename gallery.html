@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EchoSpace Studios - Gallery</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/gallery.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container-fluid py-2 px-lg-5">
+          <a class="navbar-brand" href="#home">
+            <img src="./assets/images/logo.png" alt="EchoSpace Studios Logo" class="navbar-logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blogs.html">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <a href="#booking" class="btn btn-primary btn-sm ms-lg-3">Book a Studio</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero section-reveal">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="cyan-gradient-text display-3">Our Gallery</h1>
+              <p class="lead text-secondary">A glimpse into the spaces where creativity happens.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section section-reveal">
+        <div class="container-fluid px-lg-5 py-5">
+          <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col">
+              <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img-src="assets/images/studio-a.jpg">
+                <img src="assets/images/studio-a.jpg" alt="Vocal Booth" class="img-fluid" />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                </div>
+              </a>
+            </div>
+
+            <div class="col">
+              <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img-src="assets/images/studio-b.jpg">
+                <img src="assets/images/studio-b.jpg" alt="Live Rehearsal Room" class="img-fluid" />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                </div>
+              </a>
+            </div>
+
+            <div class="col">
+              <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img-src="assets/images/studio-c.jpg">
+                <img src="assets/images/studio-c.jpg" alt="Production Desk" class="img-fluid" />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                </div>
+              </a>
+            </div>
+
+            <div class="col">
+              <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img-src="assets/images/hero-bg.jpg">
+                <img src="assets/images/hero-bg.jpg" alt="Main Control Room" class="img-fluid" />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                </div>
+              </a>
+            </div>
+
+            <div class="col">
+              <a
+                href="#"
+                class="gallery-item"
+                data-bs-toggle="modal"
+                data-bs-target="#galleryModal"
+                data-img-src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOXE2N3wwfDF8c2VhcmNofDN8fG11c2ljJTIwc3R1ZGlvJTIwbmVvbnxlbnwwfHx8fDE3MzExNTg3NjR8MA&ixlib=rb-4.0.3&q=80&w=1920"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOXE2N3wwfDF8c2VhcmNofDN8fG11c2ljJTIwc3R1ZGlvJTIwbmVvbnxlbnwwfHx8fDE3MzExNTg3NjR8MA&ixlib=rb-4.0.3&q=80&w=1920"
+                  alt="Studio Atmosphere"
+                  class="img-fluid"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                </div>
+              </a>
+            </div>
+
+            <div class="col">
+              <a
+                href="#"
+                class="gallery-item"
+                data-bs-toggle="modal"
+                data-bs-target="#galleryModal"
+                data-img-src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOXE2N3wwfDF8c2VhcmNofDR8fG11c2ljJTIwY29uY2VydCUyMG5lb258ZW58MHx8fHwxNzMxMTU5MTg0fDA&ixlib=rb-4.0.3&q=80&w=1080"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOXE2N3wwfDF8c2VhcmNofDR8fG11c2ljJTIwY29uY2VydCUyMG5lb258ZW58MHx8fHwxNzMxMTU5MTg0fDA&ixlib=rb-4.0.3&q=80&w=1080"
+                  alt="Concert Vibe"
+                  class="img-fluid"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-arrows-fullscreen"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="galleryModalLabel">Studio View</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="" class="img-fluid gallery-modal-img" alt="Gallery Image" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="footer section-reveal">
+      <div class="container-fluid px-lg-5 py-5">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img src="./assets/images/logo.png" alt="EchoSpace Studios Logo" class="navbar-logo footer-logo" />
+            <p class="text-secondary mt-2">Where Artists Create Their Echo.</p>
+          </div>
+
+          <div class="col-lg-2 mb-4 mb-lg-0">
+            <h5 class="footer-heading">Site Map</h5>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 mb-4 mb-lg-0">
+            <h5 class="footer-heading">Follow Us</h5>
+            <div class="footer-social-icons">
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <h5 class="footer-heading">Location</h5>
+            <p class="footer-address">
+              EchoSpace Studios<br />
+              456 Music Row<br />
+              Nashville, TN 37203
+            </p>
+            <p class="text-secondary small">Open Mon-Sun, 9AM – 10PM</p>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="row footer-bottom">
+          <div class="col-md-6">
+            <p class="text-secondary small mb-0">&copy; 2025 EchoSpace Studios. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="text-secondary small mb-0">Designed by EchoSpace</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

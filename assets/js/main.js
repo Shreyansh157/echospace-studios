@@ -3,6 +3,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register GSAP Plugin
   gsap.registerPlugin(ScrollTrigger);
 
+  // --- Gallery Modal Logic ---
+  function initGalleryModal() {
+    const galleryModal = document.getElementById("galleryModal");
+    if (galleryModal) {
+      galleryModal.addEventListener("show.bs.modal", (event) => {
+        // Button that triggered the modal
+        const triggerLink = event.relatedTarget;
+
+        // Get the image source from the data-img-src attribute
+        const imgSrc = triggerLink.getAttribute("data-img-src");
+
+        // Find the img tag inside the modal and set its src
+        const modalImage = galleryModal.querySelector(".gallery-modal-img");
+        modalImage.src = imgSrc;
+      });
+    }
+  }
+
   // --- GSAP Animations ---
   function initGsapAnimations() {
     // Hero Fade-in & Stagger
@@ -75,6 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- Initialize All Systems ---
+  initGalleryModal(); // <-- ADD THIS LINE
   initGsapAnimations();
   initSmoothScroll();
+  initScrollTopButton();
 });
