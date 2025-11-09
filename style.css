@@ -1,6 +1,6 @@
 :root {
   /* Color System (Updated from new images) */
-  --gradient-hero: linear-gradient(90deg, #ec008c, #fc6767); /* Pink to Orange-Red */
+  --gradient-hero: linear-gradient(to right, #ec008c, #fc6767); /* Pink to Orange-Red */
   --color-heading: #ec008c; /* Solid Magenta/Pink */
   --color-primary: #00e5ff; /* Solid Neon Cyan */
   --color-secondary: #ec008c; /* Solid Magenta/Pink */
@@ -57,11 +57,30 @@ p {
 
 /* Utility: Gradient Text */
 .hero-gradient-text {
-  background: var(--gradient-hero);
+  background: linear-gradient(to right, #00ffe7, #ef3fff, #ffeb3b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  -text-fill-color: transparent;
+}
+.cyan-gradient-text {
+    background: linear-gradient(to right, #00E5FF, #00A5FF, #0050FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.green-gradient-text {
+    background: linear-gradient(to right, #ADFF2F, #00FFC3, #00E0A0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.purple-gradient-text {
+    background: linear-gradient(to right, #E032D1, #AF58DA, #5A00E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Utility: Section Reveal (for GSAP) */
@@ -375,36 +394,171 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* Contact Section */
-.social-links a {
-  font-size: 1.5rem;
-  color: var(--color-text-secondary);
-  margin-right: 1.5rem;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+.contact-heading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-primary); /* Cyan */
+  margin-bottom: 1.5rem;
 }
 
-.social-links a:hover {
+/* Darker form fields to match reference */
+#contact .form-control {
+  background-color: #1a1a1e;
+  border-color: #333;
+  padding: 1rem; /* Make fields taller */
+}
+
+#contact .form-control:focus {
+  background-color: #1a1a1e;
+  border-color: var(--color-primary);
+}
+
+.contact-card {
+  background-color: var(--color-card-bg);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* height: 100%; */
+}
+
+.contact-links-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.contact-links-list li {
+  margin-bottom: 0.7rem;
+}
+
+.contact-links-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-links-list a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.contact-links-list a:hover {
   color: var(--color-primary);
-  transform: scale(1.2);
+}
+
+.contact-links-list i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+/* Icon Colors */
+.contact-links-list a .bi-instagram {
+  color: var(--color-heading); /* Pink */
+}
+.contact-links-list a .bi-youtube {
+  color: #FF0000; /
+}
+.contact-links-list a .bi-spotify {
+  color: #1db954; /* Spotify Green */
 }
 
 /* Footer */
-footer {
-  background-color: var(--color-card-bg);
-  padding: 3rem 0;
-  margin-top: 4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.footer {
+    background-color: var(--color-card-bg);
+    padding-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-links a {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  margin: 0 1rem;
-  transition: color 0.3s ease;
+.footer-heading {
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
 }
 
-.footer-links a:hover {
-  color: var(--color-primary);
+.footer-links-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links-list a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links-list a:hover {
+    color: var(--color-primary);
+}
+
+.footer-social-icons a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: var(--color-primary);
+}
+
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Scroll to Top Button --- */
+#scrollTopBtn {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--color-primary);
+    color: #000;
+    border: none;
+    border-radius: 50%; /* Circle */
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 50px;
+    
+    /* Animation */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+}
+
+/* Add this to your footer styles */
+.footer-address {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+#scrollTopBtn:hover {
+    background-color: var(--color-primary);
+    color: #000;
+    transform: translateY(20px) scale(1.1); /* Keep Y-translate for show anim */
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 /* --- Modal Styles (Dark Theme) --- */
@@ -449,4 +603,13 @@ footer {
 
 .modal-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.navbar-logo {
+    height: 40px; /* Adjust as needed */
+    width: auto;
+}
+
+.footer-logo {
+    height: 55px !important; /* Adjust as needed */
+    width: auto;
 }
