@@ -1,0 +1,89 @@
+@import url("components.css");
+:root {
+  --gradient-hero: linear-gradient(to right, #ec008c, #fc6767);
+  --color-heading: #ec008c;
+  --color-primary: #00e5ff;
+  --color-secondary: #ec008c;
+  --color-bg-dark: #0a0a0f;
+  --color-card-bg: #13131a;
+  --color-text: #ffffff;
+  --color-text-secondary: #b5b5b5;
+  --color-error-booked: #ff4d4d;
+  --color-success-available: #00ffc3;
+
+  --section-padding: 6rem 0;
+}
+
+/* --- Global & Typography --- */
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text);
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700 !important;
+}
+
+h2.section-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-heading);
+}
+
+h4.section-heading {
+  color: var(--color-heading);
+}
+
+p {
+  color: var(--color-text-secondary);
+  font-weight: 300;
+}
+
+/* Utility: Gradient Text */
+.hero-gradient-text {
+  background: linear-gradient(to right, #00ffe7, #ef3fff, #ffeb3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cyan-gradient-text {
+  background: linear-gradient(to right, #00e5ff, #00a5ff, #0050ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.green-gradient-text {
+  background: linear-gradient(to right, #adff2f, #00ffc3, #00e0a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.purple-gradient-text {
+  background: linear-gradient(to right, #e032d1, #af58da, #5a00e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Utility: Section Reveal (for GSAP) */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  visibility: hidden;
+}
