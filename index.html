@@ -70,7 +70,7 @@
       <section id="studios" class="py-5 section-reveal">
         <div class="container-fluid px-lg-5 py-5">
           <div class="text-center">
-            <h2 class="section-heading">Our Studios</h2>
+            <h2 class="section-heading mb-3">Our Studios</h2>
             <p class="lead text-secondary mb-5">Professionally designed studios for every need.</p>
           </div>
           <div class="row g-4 justify-content-center">
@@ -140,7 +140,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modal-recording-label">The Vocal Booth (Recording)</h5>
+              <h5 class="modal-title" id="modal-recording-label">The Vocal Booth (Recording Room)</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -167,7 +167,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modal-rehearsal-label">The Live Room (Rehearsal)</h5>
+              <h5 class="modal-title" id="modal-rehearsal-label">The Live Room (Rehearsal Room)</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -194,7 +194,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modal-production-label">The Producer's Desk (Production)</h5>
+              <h5 class="modal-title" id="modal-production-label">The Producer's Desk (Production Room)</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -217,42 +217,104 @@
       </div>
 
       <section id="booking" class="py-5 section-reveal">
-        <div class="container p-5">
+        <div class="container-fluid px-lg-5 py-5">
           <div class="text-center">
-            <h2 class="section-heading">Book Your Session</h2>
+            <h2 class="section-heading mb-3">Book Your Session</h2>
             <p class="lead text-secondary mb-5">Select a studio, date, and time to reserve your spot.</p>
           </div>
           <div class="row g-5">
             <div class="col-lg-7">
               <div class="booking-form">
                 <div class="mb-3">
-                  <label for="studio-select" class="form-label">Select Studio</label>
+                  <label for="studio-select" class="form-label">1. Select Studio</label>
                   <select class="form-select" id="studio-select">
-                    <option value="Studio A">Studio A – Recording</option>
-                    <option value="Studio B">Studio B – Rehearsal</option>
-                    <option value="Studio C">Studio C – Production</option>
+                    <option value="The Vocal Booth (Recording Room)">The Vocal Booth (Recording Room)</option>
+                    <option value="The Live Room (Rehearsal Room)">The Live Room (Rehearsal Room)</option>
+                    <option value="The Producer's Desk (Production Room)">The Producer's Desk (Production Room)</option>
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label for="date-select" class="form-label">Select Date</label>
+                  <label for="date-select" class="form-label">2. Select Date</label>
                   <input type="date" class="form-control" id="date-select" />
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">Available Time Slots</label>
+                  <label class="form-label">3. Select Time Slot</label>
                   <div id="time-slots-container"></div>
                 </div>
+
+                <button id="open-booking-modal-btn" class="btn btn-secondary w-100 mt-4" disabled>Book Now</button>
               </div>
             </div>
             <div class="col-lg-5">
               <div class="bookings-summary">
                 <h4 class="section-heading">Your Bookings</h4>
-                <p class="text-secondary small">Your sessions are saved in your browser.</p>
+                <!-- <p class="text-secondary small">Your sessions are saved in your browser.</p> -->
                 <ul id="bookings-list"></ul>
+                <button id="clear-all-bookings" class="btn btn-outline-danger btn-sm mt-3">Clear All Bookings</button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="modal fade" id="bookingConfirmationModal" tabindex="-1" aria-labelledby="bookingConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bookingConfirmationModalLabel">Confirm Your Booking</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Please confirm the details of your session and provide your information.</p>
+
+              <div class="mb-3">
+                <label class="form-label">Studio</label>
+                <input type="text" class="form-control" id="modal-confirm-studio" readonly />
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Date</label>
+                  <input type="text" class="form-control" id="modal-confirm-date" readonly />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Time</label>
+                  <input type="text" class="form-control" id="modal-confirm-time" readonly />
+                </div>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="modal-confirm-name" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="modal-confirm-name" placeholder="Enter your name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="modal-confirm-email" class="form-label">Your Email</label>
+                  <input type="email" class="form-control" id="modal-confirm-email" placeholder="you@artist.com" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="modal-confirm-contact" class="form-label">Contact No.</label>
+                  <input type="tel" class="form-control" id="modal-confirm-contact" placeholder="Your phone number" required />
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="modal-confirm-purpose" class="form-label">Purpose of Session</label>
+                  <textarea
+                    class="form-control"
+                    id="modal-confirm-purpose"
+                    rows="3"
+                    placeholder="e.g., Recording vocals for EP, Full band rehearsal, Mixing session..."
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" id="confirm-booking-btn">Book Session</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section id="about" class="py-5 section-reveal">
         <div class="container p-5">
