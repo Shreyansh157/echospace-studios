@@ -310,3 +310,6 @@
   color: var(--color-text-secondary);
   opacity: 1;
 }
+#time-slots-container p {
+  grid-column: 1 / -1; /* This makes the text span the full width */
+}
