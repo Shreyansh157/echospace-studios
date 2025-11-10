@@ -1,28 +1,25 @@
-// Load all components
 document.addEventListener("DOMContentLoaded", () => {
-  // Register GSAP Plugin
-  gsap.registerPlugin(ScrollTrigger);
-
-  // --- Gallery Modal Logic ---
+  // --- 1. Gallery Modal Logic ---
   function initGalleryModal() {
     const galleryModal = document.getElementById("galleryModal");
     if (galleryModal) {
       galleryModal.addEventListener("show.bs.modal", (event) => {
-        // Button that triggered the modal
         const triggerLink = event.relatedTarget;
-
-        // Get the image source from the data-img-src attribute
+        if (!triggerLink) return;
         const imgSrc = triggerLink.getAttribute("data-img-src");
-
-        // Find the img tag inside the modal and set its src
         const modalImage = galleryModal.querySelector(".gallery-modal-img");
-        modalImage.src = imgSrc;
+        if (modalImage) {
+          modalImage.src = imgSrc;
+        }
       });
     }
   }
 
-  // --- GSAP Animations ---
+  // --- 2. GSAP Animations ---
   function initGsapAnimations() {
+    // Register GSAP Plugin
+    gsap.registerPlugin(ScrollTrigger);
+
     // Hero Fade-in & Stagger
     gsap.from(".hero-content > *", {
       opacity: 0,
@@ -72,12 +69,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Smooth Scroll ---
+  // --- 3. Smooth Scroll ---
   function initSmoothScroll() {
-    document.querySelectorAll(".nav-link, .btn, .footer-links a").forEach((anchor) => {
-      if (anchor.hash) {
-        anchor.addEventListener("click", function (e) {
-          const targetId = this.getAttribute("href");
+    document.addEventListener("click", function (e) {
+      // Find the closest link with a hash
+      const anchor = e.target.closest('a[href^="#"]');
+      if (anchor && anchor.hash) {
+        // Check if the link is on the same page
+        const currentPath = window.location.pathname.replace(/\/$/, "");
+        const linkPath = anchor.pathname.replace(/\/$/, "");
+
+        // Only scroll if it's a same-page link
+        if (currentPath === linkPath) {
+          const targetId = anchor.hash;
           const targetElement = document.querySelector(targetId);
 
           if (targetElement) {
@@ -87,14 +91,32 @@ document.addEventListener("DOMContentLoaded", () => {
               block: "start",
             });
           }
-        });
+        }
       }
     });
   }
 
+  // --- 4. Custom Cursor Shadow ---
+  function initCustomCursor() {
+    // Create the shadow element
+    const cursorShadow = document.createElement("div");
+    cursorShadow.id = "cursor-shadow";
+    document.body.appendChild(cursorShadow);
+
+    // Use GSAP for smooth following
+    window.addEventListener("mousemove", (e) => {
+      gsap.to(cursorShadow, {
+        duration: 0.7, // A bit of a "lag"
+        x: e.clientX,
+        y: e.clientY,
+        ease: "power2.out",
+      });
+    });
+  }
+
   // --- Initialize All Systems ---
-  initGalleryModal(); // <-- ADD THIS LINE
+  initCustomCursor();
+  initGalleryModal();
   initGsapAnimations();
   initSmoothScroll();
-  initScrollTopButton();
 });

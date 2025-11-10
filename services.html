@@ -20,9 +20,9 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled" id="mainNavbar">
         <div class="container-fluid py-2 px-lg-5">
-          <a class="navbar-brand" href="#home">
+          <a class="navbar-brand" href="index.html">
             <img src="./assets/images/logo.png" alt="EchoSpace Studios Logo" class="navbar-logo" />
           </a>
           <button
@@ -39,13 +39,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html">Services</a>
+                <a class="nav-link active" href="services.html">Services</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="gallery.html">Gallery</a>
@@ -57,7 +57,7 @@
                 <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
-            <a href="#booking" class="btn btn-primary btn-sm ms-lg-3">Book a Studio</a>
+            <a href="booking.html" class="btn btn-primary btn-sm ms-lg-3">Book a Studio</a>
           </div>
         </div>
       </nav>
@@ -87,7 +87,7 @@
                     Capture your performance in our acoustically pristine rooms. From vocals to full bands, our engineers use top-tier mics and
                     preamps to get the perfect take every time.
                   </p>
-                  <a href="index.html#booking" class="btn btn-primary btn-sm mt-auto">Book Recording</a>
+                  <button class="btn btn-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#modal-service-recording">View More</button>
                 </div>
               </div>
             </div>
@@ -99,9 +99,9 @@
                   <h3 class="purple-gradient-text">Mixing & Mastering</h3>
                   <p>
                     Let our engineers balance, polish, and add punch to your tracks. We offer both analog and digital mastering to ensure your music
-                    sounds great on every platform, from Spotify to vinyl.
+                    sounds great on every platform.
                   </p>
-                  <a href="index.html#contact" class="btn btn-primary btn-sm mt-auto">Get a Quote</a>
+                  <button class="btn btn-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#modal-service-mixing">View More</button>
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@
                     Need a place to get loud? Our fully-equipped rehearsal spaces provide the backline, PA, and acoustic treatment you need to lock in
                     your sound before the big show.
                   </p>
-                  <a href="index.html#booking" class="btn btn-primary btn-sm mt-auto">Book Rehearsal</a>
+                  <button class="btn btn-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#modal-service-rehearsal">View More</button>
                 </div>
               </div>
             </div>
@@ -155,6 +155,81 @@
           </div>
         </div>
       </section>
+
+      <div class="modal fade" id="modal-service-recording" tabindex="-1" aria-labelledby="modal-recording-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-recording-label">Recording & Tracking</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="assets/images/studio-a.jpg" class="img-fluid modal-img" alt="Vocal Booth" />
+              <p>
+                Our recording service is built around our flagship <a href="index.html#studios" class="text-white">Vocal Booth (Studio A)</a>. We
+                provide an acoustically isolated environment, a selection of high-end microphones (including the Neumann U87), and top-tier preamps
+                (like the Avalon 737) to capture a pristine, radio-ready signal from the start.
+              </p>
+              <p>Ideal for: <strong>Vocals, Solo Instruments, Voice-Overs, and Podcasts.</strong></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="booking.html" class="btn btn-primary">Book a Recording Session</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-service-mixing" tabindex="-1" aria-labelledby="modal-mixing-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-mixing-label">Mixing & Mastering</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="assets/images/studio-c.jpg" class="img-fluid modal-img" alt="Mixing Desk" />
+              <p>
+                This is where your track comes to life. Our engineers will take your raw recordings and balance them, add creative effects, and create
+                a dynamic, punchy, and emotional mix. We work out of our
+                <a href="index.html#studios" class="text-white">Producer's Desk (Studio C)</a>, which features pristine Adam Audio monitors for
+                surgical precision.
+              </p>
+              <p>
+                After the mix, we offer a separate mastering service to ensure your song is loud, clear, and competitive on all streaming platforms.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="contact.html" class="btn btn-primary">Get a Mixing Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-service-rehearsal" tabindex="-1" aria-labelledby="modal-rehearsal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-rehearsal-label">Band Rehearsal</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="assets/images/studio-b.jpg" class="img-fluid modal-img" alt="Live Room" />
+              <p>
+                Our <a href="index.html#studios" class="text-white">Live Room (Studio B)</a> is a 400 sq. ft., fully soundproofed space designed for
+                full bands. Stop worrying about noise complaints and focus on your performance. The room comes with a full backline (drum kit, bass
+                amp, guitar amps) and a powerful PA system with monitors.
+              </p>
+              <p>This space is bookable by the hour directly on our booking page.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="booking.html" class="btn btn-primary">Book Rehearsal Time</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer id="footer" class="footer section-reveal">
@@ -173,6 +248,7 @@
               <li><a href="services.html">Services</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="blogs.html">Blogs</a></li>
+              <!-- <li><a href="booking.html">Booking</a></li> -->
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>

@@ -8,7 +8,7 @@ blogPosts.set("mixing-tips", {
   author: "Alex Chen",
   date: "Nov 8, 2025",
   category: "Production",
-  image: "assets/images/studio-c.jpg",
+  image: "assets/images/blog-image-1.jpg",
   content: `
     <p class="lead">Getting your mix to sound wide and spacious is a common goal for producers. A wide mix feels more immersive and professional. Here are five essential tips to help you expand your stereo image without causing phase issues.</p>
     
@@ -54,7 +54,7 @@ blogPosts.set("artist-spotlight-nightcaps", {
   author: "Jenna Riley",
   date: "Nov 2, 2025",
   category: "Artist Spotlight",
-  image: "assets/images/studio-b.jpg",
+  image: "assets/images/blog-image-3.jpg",
   content: `
     <p class="lead">We sat down with local funk band 'The Nightcaps' to discuss their workflow for their latest single, 'Sunset Drive,' recorded right here in Studio B.</p>
     

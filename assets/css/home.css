@@ -218,3 +218,70 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding-left: 1.5rem;
   margin-top: 2rem;
 }
+/* --- Booking Redirect Section (Homepage) --- */
+.booking-redirect-section {
+  background-color: var(--color-card-bg);
+  overflow: hidden; /* To contain the image collage */
+}
+
+.booking-image-collage {
+  position: relative;
+  /* Set a minimum height so it doesn't collapse on mobile */
+  min-height: 400px;
+}
+
+.booking-image-collage img {
+  border-radius: 10px;
+  border: 3px solid var(--color-bg-dark); /* Creates a separation effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  transition: transform 0.4s ease, z-index 0.4s ease;
+  width: 60%; /* Default width for images */
+}
+
+/* Position the three images in a stack */
+.booking-image-collage .img-1 {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform: rotate(-4deg);
+}
+
+.booking-image-collage .img-2 {
+  width: 55%;
+  top: 30%;
+  right: 0;
+  z-index: 3; /* Middle image on top */
+  transform: rotate(2deg);
+}
+
+.booking-image-collage .img-3 {
+  width: 50%;
+  top: 50%;
+  left: 15%;
+  z-index: 2;
+  transform: rotate(-2deg);
+}
+
+/* Add a cool hover effect */
+.booking-redirect-section:hover .img-1 {
+  transform: rotate(-8deg) scale(1.05);
+}
+.booking-redirect-section:hover .img-2 {
+  transform: rotate(6deg) scale(1.05);
+}
+.booking-redirect-section:hover .img-3 {
+  transform: rotate(-3deg) scale(1.05);
+}
+
+/* --- Home Contact CTA Section --- */
+.home-contact-cta {
+  background-color: var(--color-card-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.home-contact-cta h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}

@@ -1,0 +1,312 @@
+/* === Page Hero === */
+.page-hero {
+  padding: 10rem 0 6rem 0;
+  background-color: #0c0c10;
+  text-align: center;
+}
+
+.booking-page-section {
+  padding: 6rem 0;
+}
+
+.booking-step {
+  margin-bottom: 3.5rem;
+}
+
+.booking-step-title {
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.75rem;
+}
+
+/* --- New Studio Select Cards --- */
+.studio-select-card {
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.studio-select-card:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-5px);
+}
+
+.studio-select-card.active {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+.studio-select-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.studio-select-body {
+  padding: 1rem;
+}
+
+.studio-select-body h5 {
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+.studio-select-body p {
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+/* --- Custom Calendar Grid --- */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.calendar-month-year {
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1.75rem;
+  text-align: center;
+  margin: 0;
+}
+
+.calendar-nav {
+  background-color: var(--color-card-bg);
+  color: var(--color-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+.calendar-nav:hover {
+  background-color: var(--color-primary);
+  color: #000;
+}
+.calendar-nav:disabled {
+  color: #444;
+  background-color: #1a1a1e;
+  opacity: 0.5;
+  border-color: #333;
+}
+
+.calendar-grid {
+  background-color: var(--color-card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day-cell {
+  background-color: #2a2a30;
+  color: var(--color-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  /* 1. FIX: Remove 'background-color' and 'border-color' from transition to make clicks instant */
+  transition: transform 0.2s ease;
+}
+/* 2. FIX: Remove the default browser focus ring (the "glow") */
+.day-cell:focus {
+  outline: none;
+  box-shadow: none;
+}
+.day-cell:not(.empty, .past-date):hover {
+  border-color: var(--color-secondary);
+  background-color: #3a3a40;
+  transform: translateY(-3px); /* Add a little lift */
+}
+
+.day-cell.selected {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  transform: translateY(-3px); /* Match hover lift */
+}
+
+/* 4. FIX: Add this new rule to keep the blue color on hover */
+.day-cell.selected:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #000;
+}
+
+.day-cell.empty {
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: default;
+}
+
+.day-cell.past-date {
+  background-color: #1a1a1e;
+  border-color: #333;
+  color: #444;
+  cursor: not-allowed;
+  /* text-decoration: line-through; */
+}
+
+/* --- Time Slot Styles --- */
+#time-slots-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.time-slot {
+  background-color: var(--color-primary);
+  border: none;
+  color: #000;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.1s linear;
+  white-space: nowrap;
+}
+.time-slot.selected {
+  box-shadow: 0 0 15px var(--color-primary);
+  transform: scale(1.05);
+  outline: 2px solid var(--color-text);
+}
+.time-slot:hover {
+  background-color: var(--color-primary);
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 3px 15px rgba(0, 229, 255, 0.3);
+}
+.time-slot.booked {
+  background-color: #3a3a3a;
+  border-color: #555;
+  color: #888;
+  cursor: not-allowed;
+}
+.time-slot.booked:hover {
+  background-color: #3a3a3a;
+  color: #888;
+  transform: scale(1);
+  box-shadow: none;
+}
+
+/* --- Summary Panel Styles --- */
+.summary-panel-wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px; /* 80px navbar + 20px breathing room */
+}
+.bookings-summary {
+  background-color: var(--color-card-bg);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bookings-summary h4 {
+  border-bottom: 1px solid var(--color-heading);
+  padding-bottom: 10px;
+}
+#summary-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+}
+#summary-list li {
+  margin-bottom: 0.5rem;
+}
+#summary-list strong {
+  color: var(--color-primary);
+}
+#bookings-list {
+  list-style: none;
+  padding-left: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  flex-grow: 1;
+  font-size: 0.9rem;
+}
+#bookings-list li {
+  background-color: #0a0a0f;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--color-primary);
+}
+.bookings-summary #clear-all-bookings {
+  width: 100%;
+  text-transform: none;
+  font-size: 0.9rem;
+}
+/* --- Booking Success Modal --- */
+#bookingSuccessModal .modal-content {
+  background-color: #1a1a1e; /* A slightly lighter card bg */
+  border: 1px solid var(--color-success-available);
+  box-shadow: 0 0 30px rgba(0, 255, 195, 0.3);
+}
+
+#bookingSuccessModal h3 {
+  color: var(--color-success-available);
+  font-weight: 600;
+}
+
+/* --- Modal Form Styles --- */
+.modal-body .form-control,
+.modal-body .form-select {
+  background-color: #1a1a1e;
+  border-color: #333;
+  color: var(--color-text);
+  padding: 1rem;
+}
+
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+  background-color: #1a1a1e;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+  color: var(--color-text);
+}
+
+.modal-body .form-control::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+/* Style for the readonly inputs */
+.modal-body .form-control[readonly] {
+  background-color: #13131a;
+  border-color: #333;
+  color: var(--color-text-secondary);
+  opacity: 1;
+}
