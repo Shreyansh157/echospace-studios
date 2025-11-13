@@ -39,5 +39,3 @@ The site is fully responsive and includes several dynamic, JavaScript-powered fe
 - **Bootstrap Icons**
 
 ---
-
-## File Structure
