@@ -227,7 +227,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .booking-image-collage {
   position: relative;
   /* Set a minimum height so it doesn't collapse on mobile */
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .booking-image-collage img {
